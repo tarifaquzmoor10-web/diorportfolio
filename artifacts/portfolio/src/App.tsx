@@ -16,7 +16,7 @@ const SKILLS = [
   { name: "React / Next.js", level: 85, icon: "⚛️" },
   { name: "Node.js / Express", level: 80, icon: "🔧" },
   { name: "TypeScript", level: 78, icon: "💻" },
-  { name: "Figma / Adobe Suite", level: 92, icon: "🖌️" },
+  { name: "Adobe Suite", level: 92, icon: "🖌️" },
   { name: "CSS / Tailwind", level: 88, icon: "🎭" },
   { name: "Database / SQL", level: 75, icon: "🗄️" },
 ];
@@ -44,11 +44,11 @@ const PROJECTS = [
     icon: "📊",
   },
   {
-    title: "Mobile App UI Kit",
-    description: "Premium UI component library for React Native with 200+ components, animations, and accessibility support.",
-    tags: ["React Native", "Design System", "Mobile"],
+    title: "DiorNode — Premium Hosting",
+    description: "High-performance hosting solutions including Minecraft server hosting, Discord bot hosting, and VPS hosting — built for reliability and speed.",
+    tags: ["Minecraft", "Discord Bots", "VPS"],
     color: "#7c3aed",
-    icon: "📱",
+    icon: "🖥️",
   },
   {
     title: "Portfolio Website",
@@ -966,7 +966,7 @@ function GallerySection() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
               gap: "20px",
             }}
           >
@@ -975,7 +975,8 @@ function GallerySection() {
                 key={i}
                 className="thumb-card"
                 style={{
-                  height: i % 3 === 0 ? 280 : 240,
+                  aspectRatio: "16 / 9",
+                  background: "#0a0c12",
                   animationDelay: `${i * 0.1}s`,
                 }}
                 onClick={() => setLightbox(thumb.src)}
