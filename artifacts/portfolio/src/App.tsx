@@ -49,6 +49,7 @@ const PROJECTS = [
     tags: ["Minecraft", "Discord Bots", "VPS"],
     color: "#7c3aed",
     icon: "🖥️",
+    link: "https://diornodes.cloud",
   },
   {
     title: "Portfolio Website",
@@ -72,6 +73,7 @@ const THUMBNAILS = [
   { src: "/images/thumb3.jpg", label: "Design Work 3" },
   { src: "/images/thumb4.jpg", label: "Design Work 4" },
   { src: "/images/thumb5.jpg", label: "Design Work 5" },
+  { src: "/images/thumb6.jpg", label: "Design Work 6" },
 ];
 
 function Particles() {
@@ -844,7 +846,9 @@ function ProjectsSection() {
               style={{
                 borderColor: "rgba(255,255,255,0.06)",
                 animationDelay: `${i * 0.1}s`,
+                position: "relative",
               }}
+              onClick={() => { if ((project as any).link) window.open((project as any).link, "_blank"); }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.borderColor = `${project.color}40`;
@@ -909,6 +913,23 @@ function ProjectsSection() {
                   </span>
                 ))}
               </div>
+              {(project as any).link && (
+                <div
+                  style={{
+                    marginTop: "1rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontSize: "0.8rem",
+                    color: "#a78bfa",
+                    fontWeight: 600,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  <span>Visit Site</span>
+                  <span style={{ fontSize: "0.9rem" }}>↗</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
